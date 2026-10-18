@@ -1,0 +1,148 @@
+/* The existing Aegean palette and serif typography carry through all three slides. */
+.hero-carousel {
+  display: grid;
+  touch-action: pan-y;
+}
+.hero-carousel::before {
+  display: none;
+}
+.hero-carousel__slide {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: inherit;
+  display: grid;
+  place-items: center;
+  grid-area: 1/1;
+  background: #123d55;
+}
+.hero-carousel__slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgb(5 28 42 / 65%);
+}
+.hero-carousel .split-hero__copy {
+  padding-bottom: 150px;
+}
+.hero-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+  color: white;
+}
+.hero-controls button {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  background: rgb(7 26 37 / 55%);
+  color: white;
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 50%;
+  font-size: 23px;
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease;
+}
+.hero-controls button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+.hero-controls button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.hero-controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.hero-controls__count {
+  font-size: 12px;
+  min-width: 52px;
+}
+.hero-controls__count > span {
+  margin-left: 4px;
+}
+.hero-treatment-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+}
+.hero-treatment-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 50%;
+}
+.hero-carousel__treatment .split-hero__copy {
+  text-align: left;
+  justify-self: start;
+  width: 59%;
+  padding-left: 7%;
+  padding-right: 3%;
+}
+.hero-carousel__treatment h2 {
+  font-size: clamp(46px, 5.3vw, 84px);
+  line-height: 1.06;
+  max-width: 19ch;
+  text-wrap: balance;
+}
+.hero-carousel__treatment .split-hero__sub {
+  margin-left: 0 !important;
+}
+.hero-carousel__treatment .hero-controls {
+  justify-content: flex-start;
+}
+.hero-carousel__disclaimer {
+  position: absolute;
+  left: 7%;
+  right: calc(7% + 150px);
+  bottom: 35px;
+  font-size: 10px;
+  color: white;
+  max-width: 65ch;
+}
+@media (max-width: 700px) {
+  .hero-carousel .split-hero__copy {
+    padding-bottom: 180px;
+    padding-top: 45px;
+  }
+  .hero-controls {
+    margin-top: 22px;
+    gap: 20px;
+  }
+  .hero-carousel__treatment .split-hero__copy {
+    width: 100%;
+    text-align: center;
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+  .hero-carousel__treatment h2 {
+    font-size: clamp(39px, 10.4vw, 55px);
+    line-height: 1.08;
+    max-width: 16ch;
+    margin: 0 auto;
+  }
+  .hero-carousel__treatment .split-hero__sub {
+    margin-left: auto !important;
+  }
+  .hero-carousel__treatment .hero-controls {
+    justify-content: center;
+  }
+  .hero-carousel__disclaimer {
+    bottom: 105px;
+    left: 7%;
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-controls button:hover,
+  .hero-controls button:active {
+    transform: none;
+    transition: none;
+  }
+}

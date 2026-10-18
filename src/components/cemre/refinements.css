@@ -1,0 +1,359 @@
+/* Approved refinement phase: existing palette and content remain unchanged.
+   Colour: white #fff, sand #e8dfd2, blue #123d55, ink #182d36, pale #eaf1f4.
+   Type: Instrument Serif headlines + Archivo UI. The photo diptych is the sole hero gesture. */
+
+/* 1. Equal, full-height images with a deliberate contrast cover. */
+.split-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: max(650px, calc(100svh - 130px));
+  display: grid;
+  place-items: center;
+  background: #123d55;
+  color: white;
+  overflow: hidden;
+}
+.split-hero__images {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  gap: 2px;
+  z-index: -2;
+}
+.split-hero__images picture {
+  display: block;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.split-hero__images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.split-hero__images picture:first-child img {
+  object-position: 56% 50%;
+}
+.split-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(5 28 42 / 65%);
+  z-index: -1;
+}
+.split-hero__copy {
+  text-align: center;
+  padding: 80px 6% 130px;
+  width: 100%;
+}
+.split-hero__copy .place-label {
+  color: white;
+  margin-bottom: 24px !important;
+}
+.split-hero__copy h1 {
+  font-size: clamp(46px, 5.3vw, 84px);
+  line-height: 1.06;
+  max-width: 23ch;
+  margin: 0 auto;
+  text-wrap: balance;
+}
+.split-hero__sub {
+  max-width: 49ch;
+  margin: 26px auto 30px !important;
+  font-size: 14px;
+  color: white;
+}
+.split-hero__copy .button {
+  background: white;
+  border-color: white;
+  color: #123d55 !important;
+}
+.split-hero__footer {
+  position: absolute;
+  bottom: 27px;
+  left: 5%;
+  right: calc(5% + 150px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.split-hero__footer > span {
+  font-size: 10px;
+  max-width: 38ch;
+}
+.split-hero .scroll-link {
+  border-color: rgb(255 255 255 / 65%);
+  color: white;
+}
+
+/* 2. White type on a dark translucent pill stays readable over light or dark hair. */
+.hero-comparison {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  width: 280px;
+  max-width: 100%;
+  padding: 8px;
+  background: rgb(7 26 37 / 84%);
+  border: 1px solid rgb(255 255 255 / 55%);
+  color: white;
+  transition: transform 220ms ease;
+}
+.hero-comparison__photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  width: 112px;
+  height: 84px;
+  flex-shrink: 0;
+}
+.hero-comparison__photos > span {
+  position: relative;
+  overflow: hidden;
+}
+.hero-comparison__photos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-comparison__photos small {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
+  text-align: center;
+  font-size: 8px;
+  line-height: 1.6;
+  background: rgb(7 26 37 / 84%);
+  border-radius: 999px;
+}
+.hero-comparison__copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 5px;
+}
+.hero-comparison__copy strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.hero-comparison__copy > span {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 11px;
+}
+.hero-comparison__copy > span > span {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 220ms ease;
+}
+.hero-comparison__copy > small {
+  font-size: 8px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero-comparison:hover {
+    transform: translateY(-2px);
+  }
+  .hero-comparison:hover .hero-comparison__copy > span > span {
+    transform: translate(2px, 2px);
+  }
+}
+.hero-comparison:active {
+  transform: scale(0.98);
+}
+.compare-tag {
+  border-radius: 999px;
+  background: rgb(7 26 37 / 84%);
+  color: white;
+  padding: 8px 18px;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+  border: 1px solid rgb(255 255 255 / 30%);
+}
+
+/* 3. Demo-safe shortcut; never overlaps the phone's fixed primary CTA. */
+.floating-whatsapp {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 30;
+  min-height: 60px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px 10px 13px;
+  border-radius: 999px;
+  background: #123d55;
+  color: white !important;
+  border: 1px solid rgb(255 255 255 / 65%);
+  box-shadow: 0 5px 24px rgb(7 26 37 / 18%);
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease;
+}
+.floating-whatsapp svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.floating-whatsapp > span {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.floating-whatsapp small {
+  font-size: 9px;
+}
+.floating-whatsapp:hover {
+  transform: translateY(-3px);
+}
+.floating-whatsapp:active {
+  transform: scale(0.97);
+}
+
+/* 4. Small compositor-only feedback; no animated layout, shadows or filters. */
+.choice {
+  transition: transform 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.choice:active {
+  transform: scale(0.985);
+}
+.radio-mark {
+  position: relative;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.radio-mark::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #123d55;
+  opacity: 0;
+  transform: scale(0.45);
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease;
+}
+.choice:has(input:checked) .radio-mark::after {
+  opacity: 1;
+  transform: scale(1);
+}
+.booking-panel .button {
+  transition:
+    transform 220ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 220ms ease;
+}
+.booking-panel .button:active {
+  transform: scale(0.975);
+}
+@media (hover: hover) and (pointer: fine) {
+  .choice:hover {
+    transform: translateY(-2px);
+  }
+}
+@media (max-width: 700px) {
+  .split-hero {
+    min-height: max(660px, calc(100svh - 110px));
+  }
+  .split-hero__copy {
+    padding: 65px 7% 130px;
+  }
+  .split-hero__copy h1 {
+    font-size: clamp(39px, 10.4vw, 55px);
+    line-height: 1.08;
+    max-width: 16ch;
+  }
+  .split-hero__copy .place-label {
+    font-size: 11px;
+    margin-bottom: 22px !important;
+  }
+  .split-hero__sub {
+    font-size: 12px;
+    max-width: 35ch;
+    margin: 22px auto 26px !important;
+  }
+  .split-hero__images picture:first-child img {
+    object-position: 64% 50%;
+  }
+  .split-hero__images picture:last-child img {
+    object-position: 52% 50%;
+  }
+  .split-hero__footer {
+    bottom: calc(96px + env(safe-area-inset-bottom));
+    left: 7%;
+    right: calc(7% + 130px);
+  }
+  .split-hero__footer > span {
+    font-size: 9px;
+    max-width: 23ch;
+  }
+  .hero-comparison {
+    width: 206px;
+    gap: 8px;
+    padding: 6px;
+  }
+  .hero-comparison__photos {
+    width: 88px;
+    height: 66px;
+  }
+  .hero-comparison__copy {
+    gap: 3px;
+  }
+  .hero-comparison__copy strong {
+    font-size: 10px;
+  }
+  .hero-comparison__copy > span {
+    font-size: 9px;
+    gap: 7px;
+  }
+  .hero-comparison__copy > small {
+    font-size: 7px;
+  }
+  .floating-whatsapp {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: calc(84px + env(safe-area-inset-bottom));
+    padding: 9px 13px 9px 10px;
+    min-height: 56px;
+    gap: 7px;
+  }
+  .floating-whatsapp svg {
+    width: 29px;
+    height: 29px;
+  }
+  .floating-whatsapp > span {
+    font-size: 11px;
+  }
+  .cemre-footer {
+    padding-bottom: 175px;
+  }
+}
+@media (max-width: 360px) {
+  .floating-whatsapp > span { display: none; }
+  .floating-whatsapp { padding: 10px; min-width: 52px; justify-content: center; }
+  .split-hero__footer { right: calc(7% + 75px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floating-whatsapp:hover,
+  .floating-whatsapp:active,
+  .choice:hover,
+  .choice:active,
+  .booking-panel .button:active {
+    transform: none;
+  }
+  .radio-mark::after {
+    transition: none;
+  }
+  .hero-comparison:hover,
+  .hero-comparison:active,
+  .hero-comparison:hover .hero-comparison__copy > span > span {
+    transform: none;
+  }
+}

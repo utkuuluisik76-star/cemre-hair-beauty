@@ -1,0 +1,7 @@
+# Openingsbeeld v2
+
+Ingebouwde beeldgeneratie, 18 oktober 2026. Fictief concept, geen foto van een echte salon. Bron: hero-salon-v2.png. Geoptimaliseerde varianten: public/images/cemre/hero-salon-v2-{640,1280}.{avif,webp}. Bestaande beelden behouden.
+
+## Definitieve prompt
+
+Use case: photorealistic-natural. Asset type: website hero photo for a clearly fictional concept beauty salon Cemre Hair & Beauty in Bodrum. Create a single beautiful ultra-realistic editorial architectural interior photograph, portrait 2:3 composition. A wide view INTO an elegant spacious fully equipped high-end Bodrum hair and beauty salon, not a spa or living room. Show three actual hairstyling stations with large arched bronze-framed mirrors and deep Mediterranean blue upholstered professional salon chairs, travertine worktops, discreet tools, a luxurious curved cream reception desk in the midground, white limewashed plaster architecture, pale natural stone floors, linen curtains. Through large open arched windows in the background see Bodrum's whitewashed houses, bougainvillea and a glimmer of turquoise Aegean sea. Airy and understated, convincing believable functional salon layout, tactile details, bright soft late-morning sunlight, warm white and sand with deep navy accents. Architectural photographer with 24mm lens from just inside the entry at human eye level, balanced vertical lines, cinematic editorial quality. No people, no text, no logos, no watermark, no collage. The full salon spatial atmosphere should read immediately, not a close crop of a single chair.
