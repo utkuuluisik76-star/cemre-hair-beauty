@@ -294,14 +294,14 @@
   padding: 30px 0 24px;
   border-top: 1px solid #9bafb9;
 }
-.care-card svg {
+.care-card > svg {
   width: 75px;
   height: 75px;
   color: var(--blue);
   margin-bottom: 25px;
   transition: transform 0.3s;
 }
-.care-card:hover svg {
+.care-card:hover > svg {
   transform: translateY(-5px);
 }
 .care-card h3 {
@@ -334,7 +334,8 @@
   border-bottom: 1px solid #8b9ba3;
 }
 .text-link span {
-  font-size: 20px;
+  font-size: 15px;
+  display: inline-flex;
 }
 .fine-print {
   font-size: 11px !important;
@@ -987,7 +988,7 @@
     gap: 0 23px;
     padding-top: 24px;
   }
-  .care-card svg {
+  .care-card > svg {
     width: 58px;
     height: 58px;
     grid-row: 1/5;
@@ -1135,8 +1136,10 @@
     z-index: 20;
   }
   .mobile-cta > span {
-    font-size: 10px;
-    max-width: 12ch;
+    flex: 1;
+    min-width: 0;
+    font-size: 11px;
+    line-height: 1.35;
     color: var(--muted);
   }
   .mobile-cta .button {
@@ -1156,7 +1159,7 @@
     animation: none !important;
   }
   .button:hover,
-  .care-card:hover svg {
+  .care-card:hover > svg {
     transform: none;
   }
 }

@@ -335,6 +335,12 @@
     padding-bottom: 175px;
   }
 }
+/* Phones: icon-only bubble so it never covers headings or copy. */
+@media (max-width: 560px) {
+  .floating-whatsapp > span { display: none; }
+  .floating-whatsapp { padding: 9px; min-width: 50px; min-height: 50px; justify-content: center; opacity: 0.94; }
+  .floating-whatsapp svg { width: 28px; height: 28px; }
+}
 @media (max-width: 360px) {
   .floating-whatsapp > span { display: none; }
   .floating-whatsapp { padding: 10px; min-width: 52px; justify-content: center; }
