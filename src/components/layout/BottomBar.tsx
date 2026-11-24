@@ -1,4 +1,5 @@
 import { site } from '@/content/site';
+import { Arrow } from '@/components/ui/Arrow';
 
 /** Phones and tablets: call + primary CTA, always on screen at the bottom (hidden on desktop). */
 export function BottomBar({ callLabel, ctaLabel, ctaHref, newTabLabel }: { callLabel: string; ctaLabel: string; ctaHref: string; newTabLabel: string }) {
@@ -8,7 +9,7 @@ export function BottomBar({ callLabel, ctaLabel, ctaHref, newTabLabel }: { callL
         {callLabel}
       </a>
       <a href={ctaHref} target="_blank" rel="noopener" className="eyebrow flex min-h-14 items-center justify-center gap-2 bg-accent px-4 font-bold text-accent-ink">
-        {ctaLabel} <span aria-hidden="true">→</span>
+        {ctaLabel} <span aria-hidden="true"><Arrow dir="right" /></span>
         <span className="sr-only"> {newTabLabel}</span>
       </a>
     </div>

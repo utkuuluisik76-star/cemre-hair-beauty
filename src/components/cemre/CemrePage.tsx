@@ -5,6 +5,7 @@ import { HeroCarousel, HeroControls } from "./HeroCarousel";
 import "./cemre.css";
 import "./refinements.css";
 import "./carousel.css";
+import { Arrow } from '@/components/ui/Arrow';
 
 export function cemreMetadata(locale: CemreLocale): Metadata {
   const title = `Cemre Hair & Beauty | ${locale === "tr" ? "Bodrum Konsept" : "Bodrum Concept"}`;
@@ -125,7 +126,7 @@ export function CemrePage({ locale }: { locale: CemreLocale }) {
           </a>
           <a className="button header-book" href="#randevu">
             {t.cta}
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true"><Arrow dir="upRight" /></span>
           </a>
         </div>
       </header>
@@ -150,7 +151,7 @@ export function CemrePage({ locale }: { locale: CemreLocale }) {
             <p className="split-hero__sub">{t.sub}</p>
             <a href="#randevu" className="button">
               {t.cta}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true"><Arrow dir="upRight" /></span>
             </a>
             <HeroControls />
           </div>
@@ -190,7 +191,7 @@ export function CemrePage({ locale }: { locale: CemreLocale }) {
                 </strong>
                 <span>
                   {locale === "tr" ? "Daha fazla gör" : "See more"}
-                  <span aria-hidden="true">↘</span>
+                  <span aria-hidden="true"><Arrow dir="downRight" /></span>
                 </span>
                 <small>
                   {locale === "tr"
@@ -224,7 +225,7 @@ export function CemrePage({ locale }: { locale: CemreLocale }) {
                 </ul>
                 <a href="#randevu" data-care={i} className="text-link">
                   {t.select}
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true"><Arrow dir="upRight" /></span>
                 </a>
               </article>
             ))}
@@ -238,9 +239,7 @@ export function CemrePage({ locale }: { locale: CemreLocale }) {
           aria-labelledby="comparison-title"
         >
           <div className="comparison-copy">
-            <span className="outline-flower" aria-hidden="true">
-              ✳
-            </span>
+            <span className="outline-flower" aria-hidden="true"><Arrow dir="asterisk" /></span>
             <h2 id="comparison-title">{t.compareTitle}</h2>
             <p>{t.compareText}</p>
             <p className="fine-print">{t.compareNote}</p>
@@ -258,7 +257,7 @@ export function CemrePage({ locale }: { locale: CemreLocale }) {
             <h2 id="booking-title">{t.bookingTitle}</h2>
             <p>{t.bookingText}</p>
             <div className="booking-contact">
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true"><Arrow dir="upRight" /></span>
               <div>
                 <p>WhatsApp</p>
                 <span>+90 000 000 00 00 · Demo</span>
@@ -313,7 +312,7 @@ export function CemrePage({ locale }: { locale: CemreLocale }) {
               rel="noopener noreferrer"
             >
               {t.mapLink}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true"><Arrow dir="upRight" /></span>
             </a>
           </div>
         </section>
@@ -345,7 +344,7 @@ export function CemrePage({ locale }: { locale: CemreLocale }) {
           <p>{t.footer}</p>
           <a className="button button-light" href="#randevu">
             {t.cta}
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true"><Arrow dir="upRight" /></span>
           </a>
         </div>
         <div className="footer-bottom">
@@ -391,7 +390,7 @@ export function CemrePage({ locale }: { locale: CemreLocale }) {
         <span>{t.mobileSub}</span>
         <a href="#randevu" className="button">
           {t.cta}
-          <span aria-hidden="true">↗</span>
+          <span aria-hidden="true"><Arrow dir="upRight" /></span>
         </a>
       </div>
     </div>

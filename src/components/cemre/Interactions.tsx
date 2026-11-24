@@ -7,6 +7,7 @@ import {
   type FormEvent,
 } from "react";
 import { bookingConfig, cemre, type CemreLocale } from "@/content/cemre";
+import { Arrow } from '@/components/ui/Arrow';
 
 /** The reveal uses paired transforms, not a per-frame width or clip-path animation. */
 export function Comparison({ locale }: { locale: CemreLocale }) {
@@ -61,7 +62,7 @@ export function Comparison({ locale }: { locale: CemreLocale }) {
         />
       </div>
       <figcaption>
-        {t.compareLabel} <span aria-hidden="true">↔</span>
+        {t.compareLabel} <span aria-hidden="true"><Arrow dir="leftRight" /></span>
       </figcaption>
     </figure>
   );
@@ -350,7 +351,7 @@ export function Booking({ locale }: { locale: CemreLocale }) {
           )}
           <button className="button" type="submit" disabled={!ready}>
             {step === 2 ? t.prepare : t.next}
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true"><Arrow dir="upRight" /></span>
           </button>
         </div>
       </form>

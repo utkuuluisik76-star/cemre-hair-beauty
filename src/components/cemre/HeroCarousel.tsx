@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { cemre, type CemreLocale } from "@/content/cemre";
+import { Arrow } from '@/components/ui/Arrow';
 
 const text = {
   tr: {
@@ -72,7 +73,7 @@ export function HeroControls() {
         disabled={!nav.ready || nav.busy}
         onClick={() => nav.go(nav.index - 1, -1)}
       >
-        ←
+        <Arrow dir="left" />
       </button>
       <span className="hero-controls__count" aria-hidden="true">
         {String(nav.index + 1).padStart(2, "0")} <span>/ 03</span>
@@ -84,7 +85,7 @@ export function HeroControls() {
         disabled={!nav.ready || nav.busy}
         onClick={() => nav.go(nav.index + 1, 1)}
       >
-        →
+        <Arrow dir="right" />
       </button>
     </div>
   );
@@ -264,7 +265,7 @@ export function HeroCarousel({
                 data-care={number === 1 ? 0 : 1}
               >
                 {dict.cta}
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true"><Arrow dir="upRight" /></span>
               </a>
               <HeroControls />
             </div>

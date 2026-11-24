@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { site } from '@/content/site';
 import { Logo } from '@/components/ui/Logo';
 import './globals.css';
+import { Arrow } from '@/components/ui/Arrow';
 
 export const metadata: Metadata = {
   title: `Sayfa bulunamadı · Page not found | ${site.name}`,
@@ -30,10 +31,10 @@ export default function GlobalNotFound() {
           </div>
           <nav className="flex flex-wrap gap-x-8 gap-y-3 border-t border-line pt-5 text-sm font-semibold">
             <a href="/" className="inline-flex min-h-11 items-center underline underline-offset-4">
-              Ana sayfaya dön →
+              Ana sayfaya dön <Arrow dir="right" />
             </a>
             <a href="/en/" lang="en" className="inline-flex min-h-11 items-center text-mute hover:text-ink">
-              Go to the English site →
+              Go to the English site <Arrow dir="right" />
             </a>
           </nav>
         </main>

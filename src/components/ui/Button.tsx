@@ -1,5 +1,6 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 import { Magnetic } from '@/components/motion/Magnetic';
+import { Arrow } from '@/components/ui/Arrow';
 
 type Variant = 'solid' | 'outline' | 'light' | 'text';
 
@@ -31,9 +32,7 @@ export function Button({ variant = 'solid', arrow = true, external, newTabLabel,
     >
       <span>{children}</span>
       {arrow && (
-        <span aria-hidden="true" className="font-normal transition-transform duration-300 ease-(--ease-out-expo) group-hover:translate-x-1">
-          →
-        </span>
+        <span aria-hidden="true" className="font-normal transition-transform duration-300 ease-(--ease-out-expo) group-hover:translate-x-1"><Arrow dir="right" /></span>
       )}
       {external && newTabLabel && <span className="sr-only"> {newTabLabel}</span>}
     </a>
